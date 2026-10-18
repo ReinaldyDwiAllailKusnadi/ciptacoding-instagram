@@ -1,0 +1,47 @@
+name: render-slides
+
+on:
+  push:
+    paths:
+      - 'posts/**.html'
+      - 'src/**.css'
+      - 'render.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Install Chromium
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq chromium-browser || sudo snap install chromium
+
+      - name: Render slides
+        env:
+          CHROME_BIN: /usr/bin/chromium-browser
+        run: python3 render.py
+
+      - name: Commit rendered PNGs
+        run: |
+          git config user.name  "ciptacoding-bot"
+          git config user.email "bot@ciptacoding.com"
+          git add exports
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: re-render slides [skip ci]"
+            git push
+          else
+            echo "Tidak ada perubahan PNG."
+          fi
