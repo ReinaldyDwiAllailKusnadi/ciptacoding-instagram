@@ -37,13 +37,24 @@ def render(html_path, png_path):
         "--hide-scrollbars", "--force-device-scale-factor=1",
         "--window-size=1080,1350",
         f"--screenshot={png_path}",
-        "--default-background-color=00000000",
+        "--default-background-color=FFFFFFFF",
         f"file://{html_path}",
     ]
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     if not os.path.exists(png_path):
         print("FAIL", html_path, r.stderr[-800:])
         return False
+    # Ratakan RGBA transparan ke putih — Instagram menolak PNG transparan
+    try:
+        from PIL import Image
+        im = Image.open(png_path)
+        if im.mode in ("RGBA", "LA", "P"):
+            im = im.convert("RGBA")
+            bg = Image.new("RGB", im.size, (255, 255, 255))
+            bg.paste(im, mask=im.split()[-1])
+            bg.save(png_path, optimize=True)
+    except ImportError:
+        pass
     return True
 
 
