@@ -1,23 +1,81 @@
 <!DOCTYPE html>
 <html lang="id">
-<head><meta charset="utf-8">
-<link rel="stylesheet" href="../src/assets/style.css"></head>
+<head>
+<meta charset="utf-8">
+<title>04 — Hitungan lima tahun</title>
+<link rel="stylesheet" href="../src/assets/style.css">
+<style>
+  .calc { display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: stretch; }
+  .calc .col { border-radius: 20px; padding: 34px 32px; }
+  .calc .col.a { background: #F8FAFC; border: 1.5px solid #E2E8F0; }
+  .calc .col.b { background: #1E293B; color: #fff; }
+  .calc .lbl { font-size: 14px; font-weight: 600; letter-spacing: .16em;
+               text-transform: uppercase; color: #64748B; margin-bottom: 20px; }
+  .calc .col.b .lbl { color: #A5B4FC; }
+  .calc .amount { font-size: 54px; font-weight: 700; letter-spacing: -.04em; line-height: 1; }
+  .calc .note { font-size: 19px; line-height: 1.5; color: #64748B; margin-top: 16px; }
+  .calc .col.b .note { color: rgba(255,255,255,.72); }
+  .calc .vs { display: grid; place-items: center; font-size: 20px; font-weight: 700;
+              letter-spacing: .12em; color: #CBD5E1; }
+  .split { display: flex; flex-direction: column; gap: 12px; margin-top: 14px;
+           padding-top: 20px; border-top: 1px solid #E2E8F0; }
+  .calc .col.b .split { border-top-color: rgba(255,255,255,.18); }
+  .split div { display: flex; justify-content: space-between; font-size: 18px; color: #64748B; }
+  .calc .col.b .split div { color: rgba(255,255,255,.7); }
+  .split div b { font-weight: 600; color: #1E293B; }
+  .calc .col.b .split div b { color: #fff; }
+</style>
+</head>
 <body>
 <div class="slide">
-<div class="inner">
-<div class="top"><div class="mark"><img class="logo" src="../src/assets/logo.png" alt="CiptaCoding"><div class="word">Cipta<em>Coding</em></div></div><div class="pgn">04 — 07</div></div>
-<div style="margin-top:38px">
-  <div class="eyebrow">Ilustrasi</div>
-  <h2>Contoh: 20 pengguna,<br>5 tahun.</h2>
-  <p class="lead">Angka di bawah adalah model perhitungan, bukan survei. Ganti dengan penawaran vendor Anda sendiri.</p>
+
+  <div class="topbar">
+    <img class="logo" src="../src/assets/logo-mark.png" alt="CiptaCoding">
+    <span class="counter">04 / 07</span>
+  </div>
+
+  <div class="body">
+    <div class="kicker">Hitungan Jujur</div>
+
+    <h2 style="font-size:64px">Lima tahun,<br><span class="hl">dua hasil berbeda.</span></h2>
+
+    <div class="calc">
+      <div class="col a">
+        <div class="lbl">Sewa (SaaS)</div>
+        <div class="amount">Rp 144 jt</div>
+        <div class="split">
+          <div><span>2,4 jt &times; 60 bulan</span><b>144 jt</b></div>
+          <div><span>Kenaikan tahunan 10%</span><b>+ 27 jt</b></div>
+        </div>
+        <div class="note">Berhenti bayar, akses hilang.<br>Nol aset di akhir.</div>
+      </div>
+
+      <div class="vs">VS</div>
+
+      <div class="col b">
+        <div class="lbl">Miliki (Custom)</div>
+        <div class="amount">Aset tetap</div>
+        <div class="split">
+          <div><span>Bangun sekali</span><b>1&times;</b></div>
+          <div><span>Perawatan opsional</span><b>Anda atur</b></div>
+        </div>
+        <div class="note">Kode dan data milik Anda.<br>Nilai berlanjut setelah 5 tahun.</div>
+      </div>
+    </div>
+
+    <p class="lead" style="font-size:24px;margin-top:4px">
+      Angka di atas memakai asumsi pengguna dan modul tetap. Kami hitung ulang dengan kebutuhan Anda.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span class="handle">@ciptacoding</span>
+    <div class="dots">
+      <i class="dot"></i><i class="dot"></i><i class="dot"></i>
+      <i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
+    </div>
+  </div>
+
 </div>
-<div style="display:flex;flex-direction:column;gap:14px">
-  <div class="stat"><div><div class="n">Rp 288 jt</div><div class="l">SAAS — Rp 2,4 jt/bulan × 20 user × 5 tahun</div></div><div class="tag">naik tiap tahun</div></div>
-  <div class="stat"><div><div class="n">Rp 165 jt</div><div class="l">CUSTOM — build + maintenance 18%/tahun</div></div><div class="tag">aset tetap</div></div>
-  <div class="stat" style="background:#0F172A;border-color:#0F172A"><div><div class="n" style="color:#F7F5F0">Rp 123 jt</div><div class="l" style="color:rgba(247,245,240,.6)">Selisih yang tidak pernah masuk laporan</div></div><div class="tag" style="color:#38BDF8;font-size:15px">−43%</div></div>
-</div>
-<p class="note" style="margin-top:22px">Catatan: custom juga punya risiko — vendor menghilang, kode tanpa dokumentasi, biaya perubahan fitur. Ini bukan otomatis lebih murah.</p>
-<div class="bottom"><div class="handle">@ciptacoding</div><div class="dots"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div></div>
-</div>
-</div>
-</body></html>
+</body>
+</html>

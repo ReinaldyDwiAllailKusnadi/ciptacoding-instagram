@@ -1,63 +1,104 @@
 <!DOCTYPE html>
-<html lang="id"><head><meta charset="utf-8">
+<html lang="id">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CiptaCoding · Instagram Design System</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#F7F5F0;color:#111827;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;line-height:1.6}
-.wrap{max-width:1150px;margin:0 auto;padding:64px 26px}
-.brand{display:flex;align-items:center;gap:13px;margin-bottom:26px}
-.brand img{width:42px;height:42px;object-fit:contain}
-.brand span{font-size:22px;font-weight:800;letter-spacing:-.6px}
-.brand em{font-style:normal;color:#0664FE}
-h1{font-size:44px;font-weight:800;letter-spacing:-1.8px;line-height:1.06;margin-bottom:12px}
-.sub{font-size:17px;color:#3F4A5B;max-width:640px}
-.meta{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
-.meta div{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#A09B8E}
-.meta b{display:block;font-family:-apple-system,system-ui,sans-serif;font-size:16px;letter-spacing:0;text-transform:none;color:#111827;font-weight:700;margin-top:2px}
-h2{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#A09B8E;margin:52px 0 20px;padding-top:28px;border-top:1px solid #E3E0D8}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:20px}
-.grid a{display:block;border-radius:13px;overflow:hidden;border:1px solid #E3E0D8;transition:transform .18s,box-shadow .18s;background:#fff}
-.grid a:hover{transform:translateY(-4px);box-shadow:0 16px 34px -16px rgba(7,24,80,.3)}
-.grid img{width:100%;display:block}
-.tokens{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
-.tok{border:1px solid #E3E0D8;border-radius:11px;overflow:hidden;background:#fff}
-.tok .sw{height:68px}
-.tok .lb{padding:11px 13px}
-.tok .lb b{display:block;font-size:13.5px;font-weight:700}
-.tok .lb code{font-family:ui-monospace,monospace;font-size:12px;color:#A09B8E}
-footer{margin-top:60px;padding-top:24px;border-top:1px solid #E3E0D8;font-size:13.5px;color:#A09B8E}
-footer a{color:#0664FE;text-decoration:none}
-</style></head><body><div class="wrap">
-<div class="brand"><img src="src/assets/logo.png" alt=""><span>Cipta<em>Coding</em></span></div>
-<h1>Instagram Design System</h1>
-<p class="sub">Carousel template CiptaCoding. Clean, warm, content-first — off-white paper, satu aksen biru, tipografi besar. Ditulis sebagai HTML, dirender jadi PNG 1080×1350.</p>
-<div class="meta">
-<div>Format<b>1080 × 1350</b></div>
-<div>Slide<b>7 per carousel</b></div>
-<div>Render<b>Chrome headless</b></div>
-<div>Font<b>Plus Jakarta Sans</b></div>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:#FFFFFF; color:#0F172A; line-height:1.6;
+  font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+.wrap { max-width:1180px; margin:0 auto; padding:64px 26px 90px; }
+
+.brand { display:flex; align-items:center; gap:14px; margin-bottom:30px; }
+.brand img { width:46px; height:46px; object-fit:contain; }
+.brand span { font-size:24px; font-weight:700; letter-spacing:-.7px; }
+.brand em { font-style:normal; color:#0664FE; }
+
+h1 { font-size:48px; font-weight:700; letter-spacing:-2px; line-height:1.06; margin-bottom:14px; }
+.sub { font-size:17px; color:#64748B; max-width:680px; }
+
+.meta { display:flex; gap:34px; margin-top:30px; flex-wrap:wrap; }
+.meta div { font-family:ui-monospace,SFMono-Regular,monospace; font-size:12px; letter-spacing:.13em;
+            text-transform:uppercase; color:#94A3B8; }
+.meta b { display:block; font-family:inherit; font-size:16px; letter-spacing:0;
+          text-transform:none; color:#0F172A; font-weight:600; margin-top:4px; }
+
+h2 { font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+     color:#94A3B8; margin:56px 0 22px; padding-top:30px; border-top:1px solid #E2E8F0; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(238px,1fr)); gap:20px; }
+.grid a { display:block; border-radius:14px; overflow:hidden; border:1px solid #E2E8F0;
+          background:#fff; transition:transform .18s ease, box-shadow .18s ease; }
+.grid a:hover { transform:translateY(-4px); box-shadow:0 18px 38px -18px rgba(15,23,42,.35); }
+.grid img { width:100%; display:block; }
+
+.tokens { display:grid; grid-template-columns:repeat(auto-fill,minmax(178px,1fr)); gap:14px; }
+.tok { border:1px solid #E2E8F0; border-radius:12px; overflow:hidden; background:#fff; }
+.tok .sw { height:70px; }
+.tok .lb { padding:12px 14px; }
+.tok .lb b { display:block; font-size:13.5px; font-weight:600; }
+.tok .lb code { font-family:ui-monospace,SFMono-Regular,monospace; font-size:12px; color:#94A3B8; }
+
+footer { margin-top:64px; padding-top:26px; border-top:1px solid #E2E8F0;
+         font-size:13.5px; color:#94A3B8; }
+footer a { color:#4F46E5; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <img src="src/assets/logo-mark.png" alt="CiptaCoding">
+    <span>Cipta<em>Coding</em></span>
+  </div>
+
+  <h1>Instagram Design System</h1>
+  <p class="sub">
+    Carousel template CiptaCoding. Sistem visual diturunkan dari buildwithangga.com:
+    Poppins, skala slate, satu aksen indigo. Ditulis sebagai HTML, dirender ke PNG 1080×1350.
+  </p>
+
+  <div class="meta">
+    <div>Format<b>1080 &times; 1350</b></div>
+    <div>Slide<b>7 per carousel</b></div>
+    <div>Render<b>Chrome headless</b></div>
+    <div>Font<b>Poppins 300&ndash;700</b></div>
+  </div>
+
+  <h2>Post 01 &mdash; Sewa software atau miliki sendiri?</h2>
+  <div class="grid">
+    <a href="exports/p1_01.png"><img src="exports/p1_01.png" alt="Slide 1"></a>
+    <a href="exports/p1_02.png"><img src="exports/p1_02.png" alt="Slide 2"></a>
+    <a href="exports/p1_03.png"><img src="exports/p1_03.png" alt="Slide 3"></a>
+    <a href="exports/p1_04.png"><img src="exports/p1_04.png" alt="Slide 4"></a>
+    <a href="exports/p1_05.png"><img src="exports/p1_05.png" alt="Slide 5"></a>
+    <a href="exports/p1_06.png"><img src="exports/p1_06.png" alt="Slide 6"></a>
+    <a href="exports/p1_07.png"><img src="exports/p1_07.png" alt="Slide 7"></a>
+  </div>
+
+  <h2>Design tokens &mdash; BWA-derived</h2>
+  <div class="tokens">
+    <div class="tok"><div class="sw" style="background:#FFFFFF;border-bottom:1px solid #E2E8F0"></div><div class="lb"><b>Paper</b><code>#FFFFFF</code></div></div>
+    <div class="tok"><div class="sw" style="background:#F8FAFC"></div><div class="lb"><b>Paper soft</b><code>#F8FAFC</code></div></div>
+    <div class="tok"><div class="sw" style="background:#F1F5F9"></div><div class="lb"><b>Surface</b><code>#F1F5F9</code></div></div>
+    <div class="tok"><div class="sw" style="background:#1E293B"></div><div class="lb"><b>Ink 800</b><code>#1E293B</code></div></div>
+    <div class="tok"><div class="sw" style="background:#0F172A"></div><div class="lb"><b>Ink</b><code>#0F172A</code></div></div>
+    <div class="tok"><div class="sw" style="background:#64748B"></div><div class="lb"><b>Ink 500</b><code>#64748B</code></div></div>
+    <div class="tok"><div class="sw" style="background:#4F46E5"></div><div class="lb"><b>Accent</b><code>#4F46E5</code></div></div>
+    <div class="tok"><div class="sw" style="background:#4338CA"></div><div class="lb"><b>Accent 700</b><code>#4338CA</code></div></div>
+    <div class="tok"><div class="sw" style="background:#A5B4FC"></div><div class="lb"><b>Accent 200</b><code>#A5B4FC</code></div></div>
+    <div class="tok"><div class="sw" style="background:#0664FE"></div><div class="lb"><b>Brand blue</b><code>#0664FE</code></div></div>
+  </div>
+
+  <footer>
+    Sistem visual diekstrak dari <a href="https://buildwithangga.com">buildwithangga.com</a>
+    (arsip Wayback, CSS produksi) &middot; logo dari <a href="https://ciptacoding.com">ciptacoding.com</a>
+    &middot; render ulang: <code>python3 render.py</code>
+  </footer>
+
 </div>
-<h2>Post 01 — Sewa software atau miliki sendiri?</h2>
-<div class="grid">
-<a href="exports/p1_01.png"><img src="exports/p1_01.png" alt="Slide 1"></a>
-<a href="exports/p1_02.png"><img src="exports/p1_02.png" alt="Slide 2"></a>
-<a href="exports/p1_03.png"><img src="exports/p1_03.png" alt="Slide 3"></a>
-<a href="exports/p1_04.png"><img src="exports/p1_04.png" alt="Slide 4"></a>
-<a href="exports/p1_05.png"><img src="exports/p1_05.png" alt="Slide 5"></a>
-<a href="exports/p1_06.png"><img src="exports/p1_06.png" alt="Slide 6"></a>
-<a href="exports/p1_07.png"><img src="exports/p1_07.png" alt="Slide 7"></a>
-</div>
-<h2>Design tokens</h2>
-<div class="tokens">
-<div class="tok"><div class="sw" style="background:#F7F5F0"></div><div class="lb"><b>Paper</b><code>#F7F5F0</code></div></div>
-<div class="tok"><div class="sw" style="background:#111827"></div><div class="lb"><b>Ink</b><code>#111827</code></div></div>
-<div class="tok"><div class="sw" style="background:#3F4A5B"></div><div class="lb"><b>Ink-2</b><code>#3F4A5B</code></div></div>
-<div class="tok"><div class="sw" style="background:#E3E0D8"></div><div class="lb"><b>Line</b><code>#E3E0D8</code></div></div>
-<div class="tok"><div class="sw" style="background:#071850"></div><div class="lb"><b>Brand navy</b><code>#071850</code></div></div>
-<div class="tok"><div class="sw" style="background:#0664FE"></div><div class="lb"><b>Accent</b><code>#0664FE</code></div></div>
-<div class="tok"><div class="sw" style="background:#38BDF8"></div><div class="lb"><b>Sky</b><code>#38BDF8</code></div></div>
-<div class="tok"><div class="sw" style="background:#EDEAE2"></div><div class="lb"><b>Beige</b><code>#EDEAE2</code></div></div>
-</div>
-<footer>Logo &amp; warna diambil dari <a href="https://ciptacoding.com">ciptacoding.com</a> · render ulang: <code>python3 render.py</code></footer>
-</div></body></html>
+</body>
+</html>
